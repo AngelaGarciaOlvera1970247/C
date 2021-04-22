@@ -18,24 +18,26 @@ Finally you must place the coordinate (letter number), examples: a5, e7, b17.
 #define TRUE 1 
 #define FALSE 0
 #include "calc.h"
-#include <stdlib.h> 
-#include <ctype.h> 
-#include <time.h> 
-#define MAXOP 100 
+#include <stdlib.h> /* for atof() */
+#include <ctype.h> /* for tolower() */
+#include <time.h> /* time */
+#define MAXOP 100 /* max size of operand or operator */
+
+
 
 int main()
 {
-    int bombas=0; 
-    float porcentaje_limite_superior = .75; 
+    int bombas=0; // Numero de bombas
+    float porcentaje_limite_superior = .75; // Para que no pueda poner el 100 % de bombas
     int limite_inferior = 1;
-    int play= TRUE; 
-    int pregunta=0; 
-    int numero_encontrado; 
-    int tam; 
-    int errores=0; 
+    int play= TRUE; //Siempre sera TRUE
+    int pregunta=0; //Si es 0 te pregunta el tamaño del tablero
+    int numero_encontrado; //En casos que se ocupan numeros por ejemplo dar el tamaño del arreglo
+    int tam; //tamaño del tablero
+    int errores=0; // Checa que la entrada este bien
     int type;
     char s[MAXOP];
-    int contador=0; 
+    int contador=0; // Checa que la entrada este bien
     
     while (play==TRUE){
         if (pregunta==0){
@@ -54,7 +56,8 @@ int main()
                         pregunta=1;
                         contador=0;
                        
-                    }else {
+                    }
+                    else {
                         errores=0;
                         contador=0;
                         printf("\nNumero de columnas (sera el mismo numero de filas) entre 2 y 26\nSi escribes un numero decimal sera redondeado\n");
@@ -66,6 +69,7 @@ int main()
                 
                 }
                 }
+            
             }
         }
         
@@ -86,7 +90,8 @@ int main()
                         pregunta=2;
                         contador=0;
                        
-                    }else {
+                    }
+                    else {
                         errores=0;
                         contador=0;
                         printf("\nNumero de bombas, entre %d y %d\nSi escribes un numero decimal sera redondeado\n", limite_inferior, limite_superior);
@@ -118,7 +123,7 @@ int main()
              printf("\n");
         
             }
-           
+             
             printf ("\n");
             int z=0; // agregamos unas bombas
             srand(time(NULL));
@@ -147,7 +152,7 @@ int main()
             
             int i, j;
             int** matrix;
-            int** descubiertas; 
+            int** descubiertas; // Cero cuando no has descubierto nada por lo tanto se mostraran #
             matrix = (int**)malloc(sizeof(int*) * tam);
             // Llenamos de 0 la matrix
             for (i = 0; i < tam; i ++){
@@ -158,12 +163,15 @@ int main()
             }
             
             descubiertas = (int**)malloc(sizeof(int*) * tam);
+            // Llenamos de 0 las descubiertas 
             for (i = 0; i < tam; i ++){
                 descubiertas[i] = (int*)malloc(sizeof(int) * tam);
                  for (j=0; j<tam; j++){
                      descubiertas[i][j]=0;
                  }
             }
+            
+            // Ponemos minas
             srand(time(NULL));
             for (int z=0;z<bombas;z++){
                 int primer_numero_random=rand()%(tam);
@@ -248,10 +256,12 @@ int main()
                                             showmatrixwhileplay(matrix, tam, descubiertas);
                                         }
                                     }
-                                }else{
+                                }
+                                else{
                                     printf("\n\nError 7: coordenada fuera de rango\n\n");
                                 }
-                            }else{
+                            }
+                            else{
                                 printf("\n\nError 6: algun caracter no valido\n\n");
                             }
 
@@ -278,10 +288,17 @@ int main()
             
             if (pregunta==3){
                 play=FALSE;
-            } 
+            }
+            
+             
             
         }
      
+     
+     
+     
+     
+      
     }
     
 }
