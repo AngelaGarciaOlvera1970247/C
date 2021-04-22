@@ -15,213 +15,273 @@ Finally you must place the coordinate (letter number), examples: a5, e7, b17.
 */
 
 #include <stdio.h>
-#include <stdlib.h> /* for atof() */
-#include <ctype.h> /* for tolower() */
+#define TRUE 1 
+#define FALSE 0
 #include "calc.h"
-
-#define MAXOP 100 /* max size of operand or operator */
+#include <stdlib.h> 
+#include <ctype.h> 
+#include <time.h> 
+#define MAXOP 100 
 
 int main()
 {
+    int bombas=0; 
+    float porcentaje_limite_superior = .75; 
+    int limite_inferior = 1;
+    int play= TRUE; 
+    int pregunta=0; 
+    int numero_encontrado; 
+    int tam; 
+    int errores=0; 
     int type;
-    int cantidad_de_numeros=0;
-    int cantidad_de_letras=0;
-    int cantidad_de_errores=0;
-
-    double op2;
     char s[MAXOP];
-    int letra_encontrada=0;
-    int question=0;
-    int asignacion=0;
-    double numero_encontrado =0.0;
-    int moverse=0;
-    int respuesta_si=0;
-    int respuesta_no=0;
-    int error=0;
-
-    double abc[26]={0}; // Un arreglo de 26 espacios correspondientes a las letras del abecedario
-    int contador[26]={0}; //Cuenta cuantas asignaciones se le ha hecho a cada letra
-     while ((type = getop(s)) != EOF) {
-        if (moverse==0) {
-        switch (tolower(type)) {
-            case NUMBER:
-            numero_encontrado = atof(s);
-            push(atof(s));
-            cantidad_de_numeros++;
-            break;
-            case '+':
-            push(pop() + pop());
-            break;
-            case '*':
-            push(pop() * pop());
-            break;
-            case '-':
-            op2 = pop();
-            push(pop() - op2);
-            break;
-            case '/':
-            op2 = pop();
-            if (op2 != 0.0)
-                push(pop() / op2);
-            else
-                printf("error: zero divisor\n");
-
-            break;
-            case '\n':
-            if (!asignacion&&!question){ //// SI NO HAY SIGNO DE = NI  DE : ES UNA OPERACION
-            printf("\t%.8g\n", pop());
-            // Volvemos a valores iniciales
-            asignacion=0;
-            letra_encontrada=0;
-            question=0;
-            numero_encontrado =0;
-            cantidad_de_numeros=0;
-            cantidad_de_letras=0;
-            cantidad_de_errores=0;
+    int contador=0; 
+    
+    while (play==TRUE){
+        if (pregunta==0){
+            printf("Numero de columnas (sera el mismo numero de filas) entre 2 y 26\nSi escribes un numero decimal sera redondeado\n");
+            while(pregunta==0 && (type = getop(s)) != EOF) {
+                if (pregunta==0){
+                switch (tolower(type)) {
+                    case NUMBER:
+                    numero_encontrado = atof(s);
+                    contador++;
+                    break;
+                    case '\n':
+                    if (errores==0&&numero_encontrado>=2&&numero_encontrado<=26&&contador==1){
+                        tam=numero_encontrado;
+                        printf("Listo, se generara un tablero %d x %d\n\n", tam, tam);
+                        pregunta=1;
+                        contador=0;
+                       
+                    }else {
+                        errores=0;
+                        contador=0;
+                        printf("\nNumero de columnas (sera el mismo numero de filas) entre 2 y 26\nSi escribes un numero decimal sera redondeado\n");
+                    }
+                    break;
+                    default:
+                    errores++;
+                    break;
+                
+                }
+                }
             }
-            else if (asignacion==1&&!question&&cantidad_de_numeros==1&&cantidad_de_letras==1){ // SI HAY SIGNO DE = NO HAY DE :  DEBE PREGUNTAR
-            if (contador[letra_encontrada]==0){
-                abc[letra_encontrada]=numero_encontrado;
-                printf("Assignment ready\n");
-                contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
-                // Volvemos a valores iniciales
-                asignacion=0;
-                letra_encontrada=0;
-                question=0;
-                pop();
-                pop();
-                numero_encontrado=0;
-                cantidad_de_numeros=0;
-                cantidad_de_letras=0;
-                cantidad_de_errores=0;
-
-            }
-
-            else{
-
-                moverse=1;
-                printf("Would you like to rewrite the variable?\ny --> YES\nn-->NO\n");
-                pop();
-                pop();
-            }
-            }// Hay signo de = pero no de :
-
-            else if (asignacion==1&&question==1&&cantidad_de_numeros==1&&cantidad_de_letras==1){
-                abc[letra_encontrada]=numero_encontrado;
-                pop();
-                pop();
-                printf("Assignment ready\n");
-                contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
-                // Volvemos a valores iniciales
-                asignacion=0;
-                letra_encontrada=0;
-                question=0;
-                numero_encontrado=0;
-                cantidad_de_numeros=0;
-                cantidad_de_letras=0;
-                cantidad_de_errores=0;
-            }
-            else{
-                printf("error: check your input\n");
-                asignacion=0;
-                letra_encontrada=0;
-                question=0;
-                numero_encontrado=0;
-                cantidad_de_numeros=0;
-                cantidad_de_letras=0;
-                pop();
-                pop();
-                cantidad_de_errores=0;
-            }
-
-            break;
-            case '=':
-            asignacion=1;
-            break;
-            case ':':
-            question=1;
-            break;
-            default:
-            if (type>=97&&type<=122){
-                push(abc[type-97]);
-                letra_encontrada=type-97;
-                cantidad_de_letras++;
-
-            }
-            else {
-            cantidad_de_errores++;
-            printf("error: unknown command %s\n", s);
-            }
-            break;
         }
+        
+        if (pregunta==1){
+            int limite_superior = tam*tam*porcentaje_limite_superior;
+            printf("Numero de bombas, entre %d y %d\nSi escribes un numero decimal sera redondeado\n", limite_inferior, limite_superior);
+            while(pregunta==1 && (type = getop(s)) != EOF) {
+                if (pregunta==1){
+                switch (tolower(type)) {
+                    case NUMBER:
+                    numero_encontrado = atof(s);
+                    contador++;
+                    break;
+                    case '\n':
+                    if (errores==0&&numero_encontrado>=limite_inferior&&numero_encontrado<=limite_superior&&contador==1){
+                        bombas=numero_encontrado;
+                        printf("Listo, el numero de bombas sera %d\n\n", bombas);
+                        pregunta=2;
+                        contador=0;
+                       
+                    }else {
+                        errores=0;
+                        contador=0;
+                        printf("\nNumero de bombas, entre %d y %d\nSi escribes un numero decimal sera redondeado\n", limite_inferior, limite_superior);
+                    }
+                    break;
+                    default:
+                    errores++;
+                    break;
+                
+                }
+                }
+            
+            }
+        } 
+        
+        if (pregunta==2){ // Aqui ya se empieza a jugar si ganas imprimir ganaste y pregunta = 0 // si pierdes imprimir perdiste y pregunta = 0
+            
+            /*
+            int tablero [tam][tam];
+            int x, y;
+            
+            
+            for (x=0;x<tam;x++){ /// llenamos el tablero con 0 
+             for(y=0;y<tam;y++){
+                 tablero[x][y]=0;
+                 printf("%2d ", tablero[x][y]);
+           
+             }
+             printf("\n");
+        
+            }
+           
+            printf ("\n");
+            int z=0; // agregamos unas bombas
+            srand(time(NULL));
+            for (int z;z<bombas;z++){
+                int primer_numero_random=rand()%(tam);
+                int segundo_numero_random=rand()%(tam);
+                if (tablero[primer_numero_random][segundo_numero_random]==0){
+                    tablero[primer_numero_random][segundo_numero_random]=-1; ////// agregamos la bomba
+                }
+                else{
+                    z--;
+                }
+            }
+            
+            // Imprimimos el tablero
+            for (x=0;x<tam;x++){ /// llenamos el tablero con 0 
+             for(y=0;y<tam;y++){
+                 printf("%2d ", tablero[x][y]);
+           
+             }
+             printf("\n");
+             
+            }
+            */
+            
+            
+            int i, j;
+            int** matrix;
+            int** descubiertas; 
+            matrix = (int**)malloc(sizeof(int*) * tam);
+            // Llenamos de 0 la matrix
+            for (i = 0; i < tam; i ++){
+                matrix[i] = (int*)malloc(sizeof(int) * tam);
+                 for (j=0; j<tam; j++){
+                     matrix[i][j]=0;
+                 }
+            }
+            
+            descubiertas = (int**)malloc(sizeof(int*) * tam);
+            for (i = 0; i < tam; i ++){
+                descubiertas[i] = (int*)malloc(sizeof(int) * tam);
+                 for (j=0; j<tam; j++){
+                     descubiertas[i][j]=0;
+                 }
+            }
+            srand(time(NULL));
+            for (int z=0;z<bombas;z++){
+                int primer_numero_random=rand()%(tam);
+                int segundo_numero_random=rand()%(tam);
+                if (matrix[primer_numero_random][segundo_numero_random]==0){
+                    matrix[primer_numero_random][segundo_numero_random]=-1; ////// agregamos la bomba
+                }
+                else{
+                    z--;
+                }
+            }
+            
+            // Cambiamos los 0 por los numeros correspondientes
+            for (i = 0; i < tam; i ++){
+                 for (j=0; j<tam; j++){
+                     if (matrix[i][j]==0){
+                         matrix[i][j]=contar(matrix,tam,i,j);
+                     }
+                 }
+            }
+            
+            // showcompletematrix(matrix, tam); //ESTOO SIRVE PARA HACER TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA 
+            // showcompletematrix(descubiertas, tam);
+            printf("\nPara escribir una coordenada escribe a2 o 2a (Cambia los numeros segun la cordenada que quieras\n");
+            /// EN ESTE MOMENTO SE CREO EL TABLERO COMPLETO 
+            
+            
+            /// Antes de usarla en la descubiertas en la posicion i j igualarlo a 1
+            int letra=0;
+            int contador_letra=0;
+            int aciertos=0;
+            int variable = tam*tam-bombas;
+            showmatrixwhileplay(matrix,tam, descubiertas); 
+            while(pregunta==2 && (type = getop(s)) != EOF) {///Si pierdes o ganas imprimir el mensaje correspondiente y hacer pregunta =0
+                if(pregunta==2){
+                    switch (tolower(type)) {
+                        case NUMBER:
+                        numero_encontrado=atof(s);
+                        contador++;
+                        break;
+                        case '\n':
+                        {
+                            if(errores == 0 && contador == 1 && contador_letra == 1){
+                                printf("\n\nEntrada valida\n\n");
+                                if(numero_encontrado-1 < tam && numero_encontrado - 1 >= 0 && 
+                                    letra < tam && letra >= 0)
+                                {
+                                    int nuevos_aciertos = descubrir(matrix, descubiertas, tam, numero_encontrado, letra);
 
-     }
+                                    // caso especial, si nuevos_aciertos es -1 es porque perdimos
+                                    if(nuevos_aciertos == -1){
+                                        showcompletematrix(matrix, tam);
+                                        printf("\n\nPERDISTE!\n\n");
 
-     else {
+                                        contador_letra = 0;
+                                        letra = 0;
+                                        numero_encontrado = 0;
+                                        contador = 0;
+                                        errores = 0;
 
-     switch (tolower(type)) {
-     case 'y':
-     respuesta_si++;
-     push(0); // puede ser cualquier numero
-     break;
-     case 'n':
-     respuesta_no++;
-     push(0); // puede ser cualquier numero
-     break;
-     case '\n':
-     if (respuesta_si==1&&respuesta_no==0&&error==0){
-        abc[letra_encontrada]=numero_encontrado;
-        pop();
-        printf("Assignament ready\n");
-        contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
-        // Volvemos a valores iniciales
-        asignacion=0;
-        letra_encontrada=0;
-        question=0;
-        numero_encontrado=0;
-        respuesta_no=0;
-        respuesta_si=0;
-        error=0;
-        moverse=0;
-        cantidad_de_numeros=0;
-        cantidad_de_letras=0;
-        cantidad_de_errores=0;
+                                        pregunta = 0;
+                                    }
+                                    else if(nuevos_aciertos == 0){
+                                        printf("\n\nYa habias seleccionado esta casilla!\n\n");
+                                        showmatrixwhileplay(matrix, tam, descubiertas);
+                                    }
+                                    else {
+                                        aciertos += nuevos_aciertos;
+                                        if(aciertos >= tam * tam - bombas){
+                                            showcompletematrix(matrix, tam);
+                                            printf("\n\nGANASTE!\n\n");
 
-     }
-     else if (respuesta_si==0&&respuesta_no==1&&error==0){
-        pop();
-        printf("The assign did not apply\n");
-        // Volvemos a valores iniciales
-        asignacion=0;
-        letra_encontrada=0;
-        question=0;
-        numero_encontrado=0;
-        respuesta_no=0;
-        respuesta_si=0;
-        moverse=0;
-        error=0;
-        cantidad_de_numeros=0;
-        cantidad_de_letras=0;
-        cantidad_de_errores=0;
+                                            contador_letra = 0;
+                                            letra = 0;
+                                            numero_encontrado = 0;
+                                            contador = 0;
+                                            errores = 0;
 
-     }
-     else{
-        pop();
-        printf("error: Check your input\n\n");
-        printf("Would you like to rewrite the variable?\ny --> YES\nn-->NO\n");
-        respuesta_no=0;
-        respuesta_si=0;
-        error=0;
-        cantidad_de_numeros=0;
-        cantidad_de_letras=0;
-        cantidad_de_errores=0;
-     }
-     break;
-     default:
-     error++;
-     break;
-     }
-     }
+                                            pregunta = 0;
+                                        }
+                                        else{
+                                            showmatrixwhileplay(matrix, tam, descubiertas);
+                                        }
+                                    }
+                                }else{
+                                    printf("\n\nError 7: coordenada fuera de rango\n\n");
+                                }
+                            }else{
+                                printf("\n\nError 6: algun caracter no valido\n\n");
+                            }
+
+                            contador_letra = 0;
+                            letra = 0;
+                            numero_encontrado = 0;
+                            contador = 0;
+                            errores = 0;
+                        }break;
+                        default:
+                         if (type>=97&&type<=122){
+                            letra=type-97;
+                            contador_letra++;
+                         }
+                         else {
+                            printf("\n\nError 6: Checa tu entrada\n\n");
+                            errores++;
+                         }
+                        break;
+                    
+                    }
+                }
+            }
+            
+            if (pregunta==3){
+                play=FALSE;
+            } 
+            
+        }
+     
     }
-    return 0;
+    
 }
