@@ -1,3 +1,19 @@
+/*
+How to compile the code?
+In the case of the "GDB compiler", 
+1.- main.c (It is the main one that you must place)
+Then the following remaining files will be placed like this:
+2.- getch.c
+3.- getop.c
+4.- calc.h
+5.- stack.c
+* All necessary files will be found in this folder *
+Execute the file "main.c"
+At first, it will ask you for the number of columns (it will be the same as the number of rows)
+Then the number of bombs
+Finally you must place the coordinate (letter number), examples: a5, e7, b17.
+*/
+
 #include <stdio.h>
 #include <stdlib.h> /* for atof() */
 #include <ctype.h> /* for tolower() */
