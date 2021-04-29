@@ -1,3 +1,7 @@
+/* Instructions to compile the code: 
+First place this file main.c in the compiler.
+Then another "leaf" is added for an additional file that is in this same folder called binarytree.h */
+
 #include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
