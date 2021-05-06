@@ -1,0 +1,18 @@
+The user <LUIS> with the pin <1> must enter at: 10:11 must work for <20 seconds> the days:
+mondaywednesdayfriday
+
+The user <MARIO> with the pin <2> must enter at: 11:10 must work for <30 seconds> the days:
+sundaytuesdaythursdaysaturday
+
+The user <ANDREA> with the pin <3> must enter at: 12:13 must work for <40 seconds> the days:
+sundaymondaythursdayfriday
+
+The user <LUPITA> with the pin <4> must enter at: 13:12 must work for <50 seconds> the days:
+tuesdaywednesdaysaturday
+
+The user <MARCO> with the pin <5> must enter at: 9:8 must work for <60 seconds> the days:
+sundaymondaytuesdaysaturday
+
+The user <PEDRO> with the pin <6> must enter at: 7:6 must work for <10 seconds> the days:
+wednesdaythursdayfriday
+
