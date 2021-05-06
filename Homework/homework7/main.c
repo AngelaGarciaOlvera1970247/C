@@ -1,6 +1,10 @@
-/* Instructions to compile the code: 
-First place this file main.c in the compiler.
-Then another "leaf" is added for an additional file that is in this same folder called register.h */
+/* 
+Instructions to compile the code:
+First put this main.c file in the compiler.
+Then another "sheet" is added for an additional file
+which is in this same folder called register.h
+With ctrl + m, system.txt // inputs.txt // outputs.txt // report.txt // schedule.txt is created 
+*/
 
 #include <stdlib.h>
 #include <time.h>
