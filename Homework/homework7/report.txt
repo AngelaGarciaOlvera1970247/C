@@ -1,7 +1,0 @@
-Report generated on Thursday 6/5/2021
-The worker with the pin <1> entered the time: <6:36:20> the day: <6/5/2021> work 3 seconds
-The worker with the pin <2> entered the time: <6:36:48> the day: <6/5/2021> work 3 seconds
-The worker with the pin <3> entered the time: <6:37:24> the day: <6/5/2021> work 2 seconds
-The worker with the pin <4> entered the time: <6:38:8> the day: <6/5/2021> work 3 seconds
-The worker with the pin <5> entered the time: <6:38:42> the day: <6/5/2021> work 4 seconds
-The worker with the pin <6> entered the time: <6:39:22> the day: <6/5/2021> work 4 seconds
