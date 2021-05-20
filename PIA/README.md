@@ -46,6 +46,11 @@ Link to the video [here] ()
 
 2.- Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2. https://www.math.brown.edu/johsilve/ReferenceCards/CRefCard.v2.2.pdf
 
+3.- Archivos de texto en Lenguaje C - Abrir, cerrar, leer y agregar ficheros txt (2020, 11 Nov). https://www.youtube.com/watch?v=RfNxPF8rlWI&t=231s
+
+4.- Learning C Language - About Problems Error, Exception and Warning (2017, 19 Nov). https://www.youtube.com/watch?v=-tg2utFwjVs
+
+
 ## PERSONAL DATA 
 - Name: Angela Monserrat García Olvera 
 - Career: Mechatronics Engineering
