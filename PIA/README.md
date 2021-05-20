@@ -49,7 +49,7 @@ Link to the video [here] ()
 ## PERSONAL DATA 
 - Name: Angela Monserrat García Olvera 
 - Career: Mechatronics Engineering
-- ID: 1970247
 - Subject: Structured Programming
+- ID: 1970247
 
 ## LICENSE
