@@ -17,14 +17,19 @@ You can make use of the compiler [OnlineGDB](https://www.onlinegdb.com/) to exec
 
 ## PLAY
 - Once you run the program, the welcome will appear, in the same way it will ask you to enter the initial balance you want before starting the game. 
+<img src="img/play/1.png">
 
 - Then you must enter the bet based on the initial balance that you first placed and automatically the program will start the game "Craps". 
+<img src="img/play/2.png">
 
 If the bet is less than the initial balance, this will start the game "Craps".
+<img src="img/play/3.png">
 
 If the bet is greater than the initial balance, the message will be displayed where it will ask you again the amount you are going to bet according to the limit imposed by the initial balance, and automatically the program will start the game "Craps". 
+<img src="img/play/4.png">
 
 - And at the end of it, the new balance will appear depending on whether you win or lose based on the aforementioned rules.
+<img src="img/play/5.png">
 
 ## STRUCTURE OF COMPILING 
 Place the files in the aforementioned compile as follows:
