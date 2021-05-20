@@ -84,7 +84,6 @@ int main(void){
     opcion = 1;
     
     casino_saldo = saldo_casino_total();
-    saldo_casino_final(casino_saldo);
     saldo = saldo_inicial();
     
     printf("\n How much money do you want to bet?: $");
