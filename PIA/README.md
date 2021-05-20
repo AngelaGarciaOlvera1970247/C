@@ -19,6 +19,7 @@ You can make use of the compiler [OnlineGDB](https://www.onlinegdb.com/) to exec
 - Once you run the program, the welcome will appear, in the same way it will ask you to enter the initial balance you want before starting the game. 
 
 - Then you must enter the bet based on the initial balance that you first placed and automatically the program will start the game "Craps". 
+
 If the bet is less than the initial balance, this will start the game "Craps".
 
 If the bet is greater than the initial balance, the message will be displayed where it will ask you again the amount you are going to bet according to the limit imposed by the initial balance, and automatically the program will start the game "Craps". 
