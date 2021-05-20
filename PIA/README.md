@@ -15,11 +15,11 @@ Final evaluation criteria from my perspective, are the following:
 
 3.- Code (3 pts): The code is clean, it contains comments regarding the functionality corresponding to each part of its structure and is easy to view.
 
-4.- Storage (2 pts): It is not complicated, you can generate as many values as you like while you are using it.
+4.- Storage (3 pts): It is not complicated, you can generate as many values as you like while you are using it.
 
 5.- Documentation (3 pts): Finally, the README.md contains the important points of the code and theme as a whole. Spelling is fine, the video is not of the best quality but it does its job.
 
-CF 12 of 15
+CF 13 of 15
 
 ## HOW TO PLAY?
 A player rolls 2 dice with 6 faces each and the faces contain 1, 2, 3, 4, 5, and 6 points. Once the dice have stopped, the sum of the points on the two upper faces is calculated to establish whether it has been won or lost according to the following:
