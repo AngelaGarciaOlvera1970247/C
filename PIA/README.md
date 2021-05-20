@@ -1,6 +1,11 @@
 # Final project (PIA): CRAPS 
 The most popular game of chance in casinos is the dice game known as "Craps", which consists of placing different bets on the result found by rolling two dice in the next roll or in an entire round.
 
+## DEMO
+To access to the demo (YouTube video) of the previously described program:
+
+Link to the video [here](https://youtu.be/aG55-E5CS5g)
+
 ## HOW TO PLAY?
 A player rolls 2 dice with 6 faces each and the faces contain 1, 2, 3, 4, 5, and 6 points. Once the dice have stopped, the sum of the points on the two upper faces is calculated to establish whether it has been won or lost according to the following:
 
@@ -46,11 +51,6 @@ NOTE: In the file "Casino.txt" we completely place, is to create a new file by p
 
 ## ARCHIVE "Casino.txt"
 It will contain all the balances obtained in each of the games, and it will also add up as you go from game to game. If you no longer like to play; In the file you will be able to see how much is the lost balance, which later you will want to decrease based on all the games won or that you plan to win to reach zero.
-
-## DEMO
-To access to the demo (YouTube video) of the previously described program:
-
-Link to the video [here](https://youtu.be/aG55-E5CS5g)
 
 ## REFERENCES
 1.- Kernighan, B. W., & Ritchie, D. M. (1973). The C Programming Language (2.a ed.) [Electronic Book]. Prentice Hall. http://cslabcms.nju.edu.cn/problem_solving/images/c/cc/The_C_Programming_Language_%282nd_Edition_Ritchie_Kernighan%29.pdf
