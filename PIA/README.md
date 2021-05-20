@@ -48,7 +48,8 @@ NOTE: In the file "Casino.txt" we completely place, is to create a new file by p
 It will contain all the balances obtained in each of the games, and it will also add up as you go from game to game. If you no longer like to play; In the file you will be able to see how much is the lost balance, which later you will want to decrease based on all the games won or that you plan to win to reach zero.
 
 ## DEMO
-To access to the demo (YouTube video) of the previously described program, click on the link below:
+To access to the demo (YouTube video) of the previously described program:
+
 Link to the video [here](https://youtu.be/aG55-E5CS5g)
 
 ## REFERENCES
