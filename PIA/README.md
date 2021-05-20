@@ -49,7 +49,7 @@ It will contain all the balances obtained in each of the games, and it will also
 
 ## DEMO
 To access to the demo (YouTube video) of the previously described program, click on the link below:
-Link to the video [here] ()
+Link to the video [here](https://youtu.be/aG55-E5CS5g)
 
 ## REFERENCES
 1.- Kernighan, B. W., & Ritchie, D. M. (1973). The C Programming Language (2.a ed.) [Electronic Book]. Prentice Hall. http://cslabcms.nju.edu.cn/problem_solving/images/c/cc/The_C_Programming_Language_%282nd_Edition_Ritchie_Kernighan%29.pdf
