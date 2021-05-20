@@ -17,7 +17,7 @@ You can make use of the compiler [OnlineGDB](https://www.onlinegdb.com/) to exec
 
 ## PLAY
 - Once you run the program, the welcome will appear, in the same way it will ask you to enter the initial balance you want before starting the game. 
-<img src="img/play/1.png">
+<img src="img//1.png">
 
 - Then you must enter the bet based on the initial balance that you first placed and automatically the program will start the game "Craps". 
 <img src="img/play/2.png">
