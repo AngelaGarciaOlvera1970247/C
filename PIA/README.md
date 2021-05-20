@@ -39,9 +39,13 @@ If the bet is greater than the initial balance, the message will be displayed wh
 
 ## PERSONAL DATA 
 Name: Angela Monserrat García Olvera 
+
 Career: Mechatronics Engineering
+
 ID: 1970247
+
 Subject: Structured Programming
+
 
 ## DEMO
 To access to the demo (YouTube video) of the previously described program, click on the link below:
