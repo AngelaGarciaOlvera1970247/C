@@ -13,7 +13,7 @@ A player rolls 2 dice with 6 faces each and the faces contain 1, 2, 3, 4, 5, and
 - Roll 4, 5, 6, 8, 9 or 10 on the first throw and roll a 7 on the subsequent throw before repeating the original “point”.
 
 ## COMPILER 
-You can make use of the compiler [OnlineGDB]((https://www.onlinegdb.com/) to execute the project code. 
+You can make use of the compiler [OnlineGDB](https://www.onlinegdb.com/) to execute the project code. 
 
 ## PLAY
 - Once you run the program, the welcome will appear, in the same way it will ask you to enter the initial balance you want before starting the game. 
