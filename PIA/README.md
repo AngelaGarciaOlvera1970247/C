@@ -70,3 +70,4 @@ Link to the video [here] ()
 - ID: 1970247
 
 ## LICENSE
+This project is under the License [GitHub](https://github.com/AngelaGarciaOlvera1970247)
