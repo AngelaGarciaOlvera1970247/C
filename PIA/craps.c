@@ -153,6 +153,8 @@ int main(void){
             printf("\n Your new balance is ");
             printf("%ld\n", saldo);
         }
+        printf("\n\n");
+        saldo_casino_final(casino_saldo); // Casino balance
         return 0;
     }
     else if(apuesta == 0){// If you bet zero
