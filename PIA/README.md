@@ -1,9 +1,6 @@
 # Final project (PIA): CRAPS 
 The most popular game of chance in casinos is the dice game known as "Craps", which consists of placing different bets on the result found by rolling two dice in the next roll or in an entire round.
 
-## TABLE OF CONTENTS
-
-
 ## HOW TO PLAY?
 A player rolls 2 dice with 6 faces each and the faces contain 1, 2, 3, 4, 5, and 6 points. Once the dice have stopped, the sum of the points on the two upper faces is calculated to establish whether it has been won or lost according to the following:
 
@@ -29,8 +26,16 @@ If the bet is greater than the initial balance, the message will be displayed wh
 - And at the end of it, the new balance will appear depending on whether you win or lose based on the aforementioned rules.
 
 ## STRUCTURE OF COMPILING 
+Place the files in the aforementioned compile as follows:
+- craps.c
+- craps.h 
+- casino.txt 
+
+NOTE: In the file "Casino.txt" we completely place, is to create a new file by pressing ctrl + m and place the name of it as is.
 
 ## ARCHIVE
+
+
 
 ## REFERENCES
 1.- Kernighan, B. W., & Ritchie, D. M. (1973). The C Programming Language (2.a ed.) [Electronic Book]. Prentice Hall. http://cslabcms.nju.edu.cn/problem_solving/images/c/cc/The_C_Programming_Language_%282nd_Edition_Ritchie_Kernighan%29.pdf
@@ -38,14 +43,10 @@ If the bet is greater than the initial balance, the message will be displayed wh
 2.- Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2. https://www.math.brown.edu/johsilve/ReferenceCards/CRefCard.v2.2.pdf
 
 ## PERSONAL DATA 
-Name: Angela Monserrat García Olvera 
-
-Career: Mechatronics Engineering
-
-ID: 1970247
-
-Subject: Structured Programming
-
+- Name: Angela Monserrat García Olvera 
+- Career: Mechatronics Engineering
+- ID: 1970247
+- Subject: Structured Programming
 
 ## DEMO
 To access to the demo (YouTube video) of the previously described program, click on the link below:
